@@ -43,7 +43,6 @@ body::before {
 }
 
 .hero {
-  border-top: 1px solid var(--rule);
   padding-top: 1.5rem;
 }
 
@@ -57,17 +56,24 @@ body::before {
 
 h1 {
   margin: 0.7rem 0 0.28rem;
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  font-family: Baskerville, "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-size: clamp(2.6rem, 8.5vw, 5.2rem);
-  font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: 0.004em;
+  font-kerning: normal;
+}
+
+.surname {
+  font-style: italic;
+  opacity: 0.5;
 }
 
 .title {
-  margin: 0;
+  margin: 0.9rem 0 0;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.4rem);
+  line-height: 1.25;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -160,7 +166,23 @@ body.loaded .fade-target {
   }
 
   .hero,
+  .card,
   .footer {
     grid-column: 1 / -1;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    column-gap: 2.8rem;
+    align-items: start;
+  }
+
+  .card h2 {
+    margin: 0.2rem 0 0;
+  }
+
+  .card .list {
+    margin-top: 0;
   }
 }
