@@ -11,9 +11,57 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(13, 10, 10, 0.6);
+  border-bottom: 1px solid rgba(58, 47, 40, 0.4);
+}
+
+.nav-logo {
+  font-family: "Pacifico", cursive;
+  font-size: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  transition: color 200ms ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
 body {
   margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 15% -12%, #2a1b17 0%, transparent 44%),
@@ -28,22 +76,26 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 0.55px, transparent 0.55px);
-  background-size: 3px 3px;
-  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(188, 174, 156, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(188, 174, 156, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
 }
 
 .page {
   position: relative;
   max-width: 980px;
   margin: 0 auto;
-  padding: 5.4rem 1.5rem 6rem;
+  padding: 7.5rem 1.5rem 6rem;
   display: grid;
   gap: 2.2rem;
 }
 
 .hero {
   padding-top: 1.5rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 
@@ -60,7 +112,7 @@ h1 {
   font-family: "Inter", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(2.8rem, 9vw, 5.6rem);
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 1.2;
   letter-spacing: -0.015em;
 }
 
@@ -68,8 +120,8 @@ h1 {
   margin: 1.5rem auto 0;
   max-width: 60ch;
   color: var(--muted);
-  line-height: 1.9;
-  font-size: 1.04rem;
+  line-height: 1.8;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -159,6 +211,54 @@ h1 {
   white-space: normal;
   text-align: left;
   font-size: 0.94rem;
+  font-variant: small-caps;
+  font-variant-numeric: oldstyle-nums;
+  letter-spacing: 0.06em;
+}
+
+.case-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.case-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(58, 47, 40, 0.45);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.case-item:first-child {
+  padding-top: 0;
+}
+
+.case-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.case-number {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.case-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 200ms ease;
+}
+
+.case-item:hover .case-title {
+  color: var(--accent);
 }
 
 .footer {
