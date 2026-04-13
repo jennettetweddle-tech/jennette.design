@@ -146,7 +146,7 @@ h1 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(4rem, 13vw, 9rem);
   font-weight: 300;
-  line-height: 1.125;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   padding-bottom: 0.15em;
   background: linear-gradient(135deg, #d6b98c 0%, #f3ece2 55%, #e8d9c4 100%);
