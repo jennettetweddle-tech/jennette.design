@@ -49,7 +49,7 @@ html {
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   transition: color 200ms ease;
@@ -124,7 +124,7 @@ h1 {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.74rem;
+  font-size: 0.875rem;
   border-bottom: 1px solid var(--accent);
   padding-bottom: 0.18rem;
 }
@@ -136,7 +136,16 @@ h1 {
 
 .footer {
   border-top: 1px solid var(--rule);
-  padding-top: 1.1rem;
+  padding: 2rem 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
 }
 
 .footer a {
@@ -149,6 +158,122 @@ h1 {
 .footer a:hover {
   color: var(--text);
   border-bottom-color: var(--accent);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section-label h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.exp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.exp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(58, 47, 40, 0.45);
+}
+
+.exp-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.exp-company,
+.exp-role,
+.exp-date {
+  margin: 0;
+}
+
+.exp-company {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.exp-role {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.exp-date {
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1, "smcp" 1;
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 680px) {
+  .section {
+    grid-template-columns: 140px 1fr;
+    gap: 3rem;
+  }
+
+  .section-label h2 {
+    padding-top: 0.2rem;
+  }
+
+  .exp-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .exp-date {
+    margin-top: 0;
+    white-space: nowrap;
+    text-align: right;
+    flex-shrink: 0;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  margin: 0 0 0.3rem;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.skill-items {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 680px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
 }
 
 .fade-target {
