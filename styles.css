@@ -133,9 +133,8 @@ body::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
+  left: 0;
+  right: 0;
   height: 400px;
   background: radial-gradient(ellipse, rgba(214, 185, 140, 0.07) 0%, transparent 65%);
   pointer-events: none;
@@ -159,7 +158,6 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  will-change: transform;
 }
 
 
