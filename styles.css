@@ -7,14 +7,11 @@
   --rule: #3a2f28;
   --red: #8b2020;
 
-  /* Typographic scale: pentatonic (n=5, r=2), base 16px */
-  --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.875rem;  /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-md:   1.149rem;  /* 18.4px */
-  --text-lg:   1.32rem;   /* 21.1px */
-  --text-xl:   1.516rem;  /* 24.3px */
-  --text-2xl:  1.741rem;  /* 27.9px */
+  /* Typographic scale: base 16px */
+  --text-small: 0.875rem;  /* 14px */
+  --text-base:  1.125rem;  /* 18px */
+  --text-lg:   1.5rem;    /* 24px */
+  --text-xl:   1.875rem;  /* 30px */
 }
 
 * {
@@ -63,7 +60,7 @@ html {
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: var(--text-xs);
+  font-size: var(--text-small);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   transition: color 200ms ease;
@@ -149,7 +146,7 @@ body::after {
 h1 {
   margin: 0.7rem 0 0.28rem;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(4rem, 13vw, 9rem);
+  font-size: clamp(3rem, 10vw, 7rem);
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -166,6 +163,7 @@ h1 {
   max-width: 60ch;
   color: var(--muted);
   line-height: 1.8;
+  text-wrap: balance;
   font-size: var(--text-lg);
   text-align: center;
 }
@@ -177,7 +175,7 @@ h1 {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: var(--text-xs);
+  font-size: var(--text-small);
   border-bottom: 1px solid var(--accent);
   padding-bottom: 0.18rem;
 }
@@ -198,7 +196,7 @@ h1 {
 .footer p {
   margin: 0;
   color: var(--muted);
-  font-size: var(--text-xs);
+  font-size: var(--text-small);
   text-align: center;
 }
 
@@ -222,10 +220,23 @@ h1 {
   border-top: 1px solid var(--rule);
 }
 
+.overview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.overview-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
+
 .section-label h2 {
   margin: 0;
   color: var(--muted);
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 400;
   font-style: italic;
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -261,16 +272,51 @@ h1 {
 .exp-company {
   color: var(--text);
   font-weight: 600;
+  font-size: var(--text-base);
+}
+
+.exp-subrole {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.exp-subrole:first-of-type {
+  margin-top: 0;
+}
+
+.exp-date--inline {
+  font-size: var(--text-small);
+  color: var(--muted);
+  text-transform: uppercase;
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1, "smcp" 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.exp-bullets {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .exp-role {
   color: var(--muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 .exp-date {
   color: var(--muted);
-  font-size: var(--text-xs);
+  font-size: var(--text-small);
   text-transform: uppercase;
   font-variant-numeric: oldstyle-nums;
   font-feature-settings: "onum" 1, "smcp" 1;
@@ -319,7 +365,7 @@ h1 {
 .skill-items {
   margin: 0;
   color: var(--muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.7;
 }
 
