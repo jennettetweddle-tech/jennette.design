@@ -16,15 +16,17 @@
         <p class="description">
           Hey, I'm Jennette, a product designer building tools people actually want to use.
         </p>
-        <a class="button" href="mailto:jennette.tweddle@gmail.com">Get in Touch</a>
+        <a class="button" href="mailto:jennette.tweddle@gmail.com" id="openContact">Get in Touch</a>
       </header>
       <section id="overview" class="section">
         <div class="section-label">
-          <h2>Overview</h2>
+          <h2>About</h2>
         </div>
         <div class="overview-body">
-          <p>I'm Jennette, a product designer with a focus in fintech tools. I lead with empathy-driven research, build alignment through storytelling, and prove value fast by shipping small and often to navigate complex financial landscapes.</p>
-          <p>As a seasoned product designer with a proven track record of building 0–1 products in dynamic start-up environments, I thrive in collaborative spaces where complex ideas evolve into meaningful, scalable solutions. I lead design initiatives that blend creativity with strategic insight, consistently delivering products with measurable value to both users and the business.</p>
+          <p>Hey, I'm Jennette, a seasoned product designer with a proven track record of building 0–1 products in dynamic start-up environments. I thrive in collaborative spaces where ideas evolve into meaningful, scalable solutions.</p>
+          <p>I lead design initiatives that blend creativity with strategic insight, delivering products with measurable value to both users and the business. I believe in leading with empathy-driven research, building alignment through storytelling, and proving value by shipping small and often.</p>
+          <p>My experience spans B2C SaaS products with a deep focus on fintech. I've found my stride in demystifying financial workflows for underserved communities, empowering them with the tools and clarity to break free from financial burdens. More broadly, I get excited about simplifying complex workflows and helping users get things done.</p>
+          <p>Currently, I'm passionate about discovering how to leverage LLMs across every part of the product building process — and particularly interested in finding where AI can handle the heavy lifting, so designers can focus their time and energy on the work that matters most.</p>
         </div>
       </section>
       <section id="experience" class="section">
@@ -148,6 +150,45 @@
     <footer class="footer">
       <p>&copy; 2026 Jennette Tweddle &nbsp;·&nbsp; Hand-crafted prompts, AI-generated pixels</p>
     </footer>
+
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact form">
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+        <h2 class="modal-heading">Let's talk.</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-field form-field--radio">
+            <label class="field-label">What's this about?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="interest" value="work" checked />
+                <span class="radio-label">
+                  <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                  <span class="radio-title">I've got a brief</span>
+                  <span class="radio-sub">Work &amp; collaboration</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="interest" value="social" />
+                <span class="radio-label">
+                  <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                  <span class="radio-title">I've got a vibe</span>
+                  <span class="radio-sub">Just connecting</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" required />
+          </div>
+          <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send it</button>
+        </form>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
     <script type="text/javascript">
