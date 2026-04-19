@@ -34,13 +34,38 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && overlay.classList.contains("is-open")) closeModal();
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const name = form.name.value.trim();
-  const message = form.message.value.trim();
-  const interest = form.interest.value;
-  const subject = interest === "work" ? "Work enquiry from " + name : "Hello from " + name;
-  window.location.href = `mailto:jennette.tweddle@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  const submitBtn = form.querySelector(".form-submit");
+  submitBtn.textContent = "Sending…";
+  submitBtn.disabled = true;
+
+  const data = {
+    name: form.name.value.trim(),
+    interest: form.interest.value,
+    message: form.message.value.trim(),
+  };
+
+  try {
+    const res = await fetch("https://formspree.io/f/mqewblye", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      form.innerHTML = `<p class="form-success">Thanks, ${data.name}. I'll be in touch soon.</p>`;
+    } else {
+      throw new Error();
+    }
+  } catch {
+    submitBtn.textContent = "Send it";
+    submitBtn.disabled = false;
+    const err = document.createElement("p");
+    err.className = "form-error";
+    err.textContent = "Something went wrong. Try again?";
+    form.appendChild(err);
+  }
 });
 
 const h1 = document.querySelector("h1");
