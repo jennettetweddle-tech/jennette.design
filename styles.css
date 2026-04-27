@@ -229,11 +229,20 @@ h1 {
   font-family: "Instrument Serif", Georgia, serif;
   line-height: 1.1;
   max-width: 100%;
+  display: flex;
+  align-items: baseline;
+  margin-left: -2.3rem;
 }
 
 .section-dash {
   color: var(--accent);
   font-style: normal;
+  font-size: 0.65em;
+  flex-shrink: 0;
+  width: 2.3rem;
+  text-align: center;
+  position: relative;
+  top: -0.2em;
 }
 
 .exp-list {
@@ -248,7 +257,8 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -257,6 +267,14 @@ h1 {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
+}
+
+.exp-item:first-child {
+  padding-top: 0;
+}
+
+.exp-item--multi {
+  padding-bottom: 0.75rem;
 }
 
 .exp-item:last-child {
@@ -333,6 +351,15 @@ h1 {
 @media (max-width: 600px) {
   h1 {
     font-size: clamp(3rem, 17vw, 5rem);
+  }
+
+  .section-label h2 {
+    margin-left: 0;
+  }
+
+  .section-dash {
+    width: auto;
+    margin-right: 0.3em;
   }
 }
 
@@ -566,6 +593,7 @@ h1 {
   color: var(--muted);
   font-size: var(--text-small);
 }
+
 
 .fade-target {
   opacity: 0;
