@@ -162,27 +162,40 @@ h1 {
   letter-spacing: 0.16em;
   font-size: var(--text-small);
   position: relative;
-  padding: 0.3rem 0.2rem;
+  padding: 0.3rem 0.25rem 0.5rem;
   transition: color 300ms ease;
   z-index: 0;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--accent);
 }
 
 .button::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--text);
+  background: var(--accent);
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
   z-index: -1;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   color: var(--bg);
+  outline: none;
 }
 
-.button:hover::after {
+.button:hover::after,
+.button:focus::after {
   transform: scaleY(1);
 }
 
@@ -309,7 +322,7 @@ h1 {
 
 
 .exp-company {
-  color: var(--text);
+  color: var(--accent);
   font-weight: 600;
   font-size: var(--text-base);
   margin-bottom: 0.4rem;
@@ -618,11 +631,6 @@ h1 {
   font-size: var(--text-small);
 }
 
-@media (pointer: fine) {
-  .button {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='34' viewBox='0 0 26 34'%3E%3Cg fill='white' stroke='%23111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='17' width='18' height='13' rx='6'/%3E%3Crect x='0' y='18' width='7' height='10' rx='3.5'/%3E%3Crect x='5' y='1' width='9' height='19' rx='4.5'/%3E%3Crect x='14' y='7' width='7' height='13' rx='3.5'/%3E%3Crect x='19' y='10' width='6' height='10' rx='3'/%3E%3C/g%3E%3C/svg%3E") 9 1, pointer;
-  }
-}
 
 .fade-target {
   opacity: 0;
