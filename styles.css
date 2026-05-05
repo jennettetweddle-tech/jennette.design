@@ -252,6 +252,19 @@ h1 {
   max-width: 100%;
 }
 
+.resume-link {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.resume-link:hover {
+  opacity: 0.75;
+}
+
 .section-label h2 {
   margin: 0;
   color: var(--text);
@@ -364,9 +377,15 @@ h1 {
   max-width: 100%;
 }
 
+.exp-bullets strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .exp-role {
   color: var(--muted);
   font-size: var(--text-base);
+  font-weight: 600;
 }
 
 .exp-date {
